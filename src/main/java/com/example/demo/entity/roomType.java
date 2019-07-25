@@ -1,12 +1,13 @@
 package com.example.demo.entity;
 
 /**
- * Created by wangzhenqin on 2019/7/22.
+ * Created by wangzhenqin on 2019/7/25.
  */
-public class roomTepy {
+public class roomType {
     private Integer id;
     private String name;
     private Integer money;
+    private Integer number;
 
     public Integer getId() {
         return id;
@@ -31,4 +32,12 @@ public class roomTepy {
     public void setMoney(Integer money) {
         this.money = money;
     }
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
 }

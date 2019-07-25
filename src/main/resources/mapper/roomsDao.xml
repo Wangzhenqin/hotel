@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.roomsDao">
+    <select id="searchRooms" resultType="com.example.demo.entity.roomType">
+        select room_type.`name`,room_type.money,count(rooms.r_id)as number
+        from room_type join rooms on room_type.id=rooms.type
+        group by rooms.type
+    </select>
+</mapper>
