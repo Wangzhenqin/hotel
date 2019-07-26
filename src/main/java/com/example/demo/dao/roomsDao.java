@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import com.example.demo.entity.roomType;
+import com.example.demo.entity.rooms;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public interface roomsDao {
     //查询空房间
     List<roomType> searchRooms();
     //入住
-    int checkInRoom(int type);
+    int checkInRoom(rooms room);
     //续住
     int moreDays(int days);
     //退房
