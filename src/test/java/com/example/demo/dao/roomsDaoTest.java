@@ -22,32 +22,31 @@ import static org.junit.Assert.*;
 public class roomsDaoTest {
     @Autowired
     private roomsDao roomsDao;
+    @Ignore
     @Test
     public void searchRooms() throws Exception {
         List<roomType> list=roomsDao.searchRooms();
         assertEquals(3,list.size());
     }
-
     @Test
     public void checkInRoom() throws Exception {
         rooms room=new rooms();
         Date date =new Date();
         room.setInTime(date);
-        date.setTime(date.getTime()+60 * 60 * 24 * 1000 * 10L);
-        room.setOutTime(date);
-        room.setpName("wang");
+        Date outDate= (Date) date.clone();
+        outDate.setTime(outDate.getTime()+60 * 60 * 24 * 1000 * 10L);
+        room.setOutTime(outDate);
+        room.setpId(1);
         room.setType(1);
         assertEquals(1,roomsDao.checkInRoom(room));
     }
-    @Ignore
     @Test
     public void moreDays() throws Exception {
-
+        assertEquals(1,roomsDao.moreDays(203,1,10));
     }
-    @Ignore
     @Test
     public void checkOutRoom() throws Exception {
-
+        assertEquals(1,roomsDao.checkOutRoom(203,1));
     }
 
 }

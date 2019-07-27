@@ -14,7 +14,21 @@
             <if test="pId!=null">p_id=#{pId},</if>
             <if test="pName!=null">p_name=#{pName},</if>
         </set>
-        where type=#{type} and isnull(in_time)
+        where type=#{type} and isnull(p_id)
         limit 1
+    </update>
+    <update id="moreDays">
+        update rooms
+        <set>
+            <if test="days!=null">out_time=date_add(out_time,interval #{days} DAY),</if>
+        </set>
+        where p_id=#{pId} and r_name=#{rName}
+    </update>
+    <update id="checkOutRoom">
+        update rooms
+        <set>
+            <if test="rName!=null">p_name=null,p_id=null</if>
+        </set>
+        where r_name=#{rName} and p_id=#{pId}
     </update>
 </mapper>

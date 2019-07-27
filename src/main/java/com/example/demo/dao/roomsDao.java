@@ -2,6 +2,7 @@ package com.example.demo.dao;
 
 import com.example.demo.entity.roomType;
 import com.example.demo.entity.rooms;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface roomsDao {
     //入住
     int checkInRoom(rooms room);
     //续住
-    int moreDays(int days);
+    int moreDays(@Param("rName")int rName,@Param("pId") int pId,@Param("days")int days);
     //退房
-    int checkOutRoom(String rName,String pName);
+    int checkOutRoom(@Param("rName")int rName,@Param("pId")int pId);
 }
