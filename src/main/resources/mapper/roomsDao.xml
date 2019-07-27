@@ -4,6 +4,7 @@
     <select id="searchRooms" resultType="com.example.demo.entity.roomType">
         select room_type.name,room_type.money,count(rooms.r_id)as number
         from room_type join rooms on room_type.id=rooms.type
+        where isnull(rooms.p_id)
         group by rooms.type
     </select>
     <update id="checkInRoom" parameterType="com.example.demo.entity.rooms">

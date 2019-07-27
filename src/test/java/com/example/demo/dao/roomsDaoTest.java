@@ -22,7 +22,6 @@ import static org.junit.Assert.*;
 public class roomsDaoTest {
     @Autowired
     private roomsDao roomsDao;
-    @Ignore
     @Test
     public void searchRooms() throws Exception {
         List<roomType> list=roomsDao.searchRooms();
