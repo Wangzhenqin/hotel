@@ -7,6 +7,11 @@
         where isnull(rooms.p_id)
         group by rooms.type
     </select>
+    <select id="queryRoom" resultType="com.example.demo.entity.rooms">
+        select r_name,type,floor,in_time,out_time
+        from rooms
+        where p_id=#{pId}
+    </select>
     <update id="checkInRoom" parameterType="com.example.demo.entity.rooms">
         update rooms
         <set>

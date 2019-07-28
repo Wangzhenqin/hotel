@@ -12,6 +12,8 @@ import java.util.List;
 public interface roomsDao {
     //查询空房间
     List<roomType> searchRooms();
+    //查询房间
+    rooms queryRoom(int pId);
     //入住
     int checkInRoom(rooms room);
     //续住

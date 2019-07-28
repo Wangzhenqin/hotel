@@ -28,6 +28,12 @@ public class roomsDaoTest {
         assertEquals(3,list.size());
     }
     @Test
+    public void queryRoom() throws Exception{
+        rooms room=new rooms();
+        room=roomsDao.queryRoom(6);
+        assertEquals("201",room.getrName());
+    }
+    @Test
     public void checkInRoom() throws Exception {
         rooms room=new rooms();
         Date date =new Date();
@@ -43,6 +49,7 @@ public class roomsDaoTest {
     public void moreDays() throws Exception {
         assertEquals(1,roomsDao.moreDays(203,1,10));
     }
+
     @Test
     public void checkOutRoom() throws Exception {
         assertEquals(1,roomsDao.checkOutRoom(203,1));
