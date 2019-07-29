@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.io.IOException;
 
@@ -16,7 +17,7 @@ import java.io.IOException;
  */
 @Configuration
 public class SessionFactoryConfiguration {
-    @Autowired
+    @Resource
     private DataSource dataSource;
     @Value("${mybatis_config_file}")
     private String mybatisConfigFilePath;
