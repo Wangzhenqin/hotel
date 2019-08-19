@@ -63,7 +63,7 @@ public class rooms {
         this.pName = pName;
     }
 
-    public Date getInTime() {
+    public Date getInTime(Date date) {
         return inTime;
     }
 
