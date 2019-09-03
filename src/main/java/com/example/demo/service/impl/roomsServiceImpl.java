@@ -16,7 +16,9 @@ import java.util.List;
 @Service
 public class roomsServiceImpl implements roomsService {
     private roomsDao roomsDao;
-
+    public roomsServiceImpl(roomsDao roomsDao){
+        this.roomsDao=roomsDao;
+    }
     @Override
     public List<roomType> searchRooms() {
         return roomsDao.searchRooms();
